@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  teclado-app:
+    build: .
+    container_name: teclado-web
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    networks:
+      - teclado-network
+
+networks:
+  teclado-network:
+    driver: bridge
